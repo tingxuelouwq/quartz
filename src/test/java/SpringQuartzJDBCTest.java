@@ -42,7 +42,11 @@ public class SpringQuartzJDBCTest {
             scheduler.start();
             // 4. 调度执行
             scheduler.scheduleJob(job, trigger);
+
+            Thread.sleep(60 * 1000);
         } catch (SchedulerException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
